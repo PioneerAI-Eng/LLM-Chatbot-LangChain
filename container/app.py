@@ -90,10 +90,11 @@ def get_sidebar_params() -> Tuple[float, float, int, int, int, str, str]:
             "Temperature",
             min_value=0.0,
             max_value=1.0,
-            value=1.0,
-            step=0.1,
+            value=0.8,
+            step=0.5,
             key=f"{st.session_state['widget_key']}_Temperature",
         )
+        
         with st.container():
             col1, col2 = st.columns(2)
             with col1:
