@@ -251,6 +251,8 @@ def display_chat_messages(uploaded_files: List[st.runtime.uploaded_file_manager.
                     st.markdown(message["content"]["response"])
 
 
+
+
 def langchain_messages_format(messages: List[Union[AIMessage, HumanMessage]]) -> List[Union[AIMessage, HumanMessage]]:
     """
     Format the messages for the LangChain conversation chain.
@@ -258,9 +260,9 @@ def langchain_messages_format(messages: List[Union[AIMessage, HumanMessage]]) ->
     for i, message in enumerate(messages):
         if isinstance(message.content, list):
             if "role" in message.content[0]:
-                if message.type == "ai":
-                    message = AIMessage(message.content[0]["content"])
                 if message.type == "human":
+                    message = AIMessage(message.content[0]["content"])
+                if message.type == "ai":
                     message = HumanMessage(message.content[0]["content"])
                 messages[i] = message
     return messages
