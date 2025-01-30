@@ -83,6 +83,8 @@ def generate_response(conversation, input_text):
     return conversation.run(input=input_text, callbacks=[StreamHandler(st.empty())])
 
 
+
+
 # Re-initialize the chat
 def new_chat() -> None:
     st.session_state["messages"] = [INIT_MESSAGE]
