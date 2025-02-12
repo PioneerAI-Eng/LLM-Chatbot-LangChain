@@ -1,8 +1,8 @@
 from typing import Dict, List, Union
 from config import config
 
-from langchain_aws import ChatBedrockConverse
 
+from langchain_aws import ChatBedrockConverse
 
 class ChatModel:
     def __init__(self, model_name: str, model_kwargs: Dict):
